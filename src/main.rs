@@ -9,7 +9,7 @@ use juniper::{
 
 #[derive(Clone)]
 struct Ctx {
-    recipes: Vec<Recipe>,
+    db: sled::Db,
 }
 
 impl Context for Ctx {}
@@ -27,7 +27,7 @@ struct Query;
 #[juniper::object(Context = Ctx)]
 impl Query {
     fn list_recipes(context: &Ctx) -> &Vec<Recipe> {
-        &context.recipes
+        &context.db.scan_prefix("recipes/").
     }
 }
 
@@ -60,16 +60,11 @@ fn main() {
     std::env::set_var("RUST_LOG", "debug");
     env_logger::init();
 
+    let db = sled::open("shef.db").expect("Can't open the DB :((((");
+
     info!("shef.top started!");
     rocket::ignite()
-        .manage(Ctx {
-            recipes: vec![Recipe {
-                title: "Les KRÈP".into(),
-                nb_person: 12,
-                ingredients: vec!["patakrèp".into()],
-                steps: vec!["tu cuis la pate uesh".into()],
-            }]
-        })
+        .manage(Ctx { db })
         .manage(Schema::new(Query, EmptyMutation::new()))
         .mount(
             "/",

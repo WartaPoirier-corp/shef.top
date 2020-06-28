@@ -10,3 +10,4 @@ env_logger = "0.7"
 juniper = { version = "0.14", features = [ "serde_json" ] }
 juniper_rocket = "0.5"
 rocket = "0.4"
+sled = "0.31"
