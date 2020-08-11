@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - master
+name: Deploy
+jobs:
+  build:
+    name: Zola Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: zbrox/zola-deploy-action@master
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
