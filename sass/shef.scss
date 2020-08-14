@@ -21,6 +21,7 @@ body {
     background: $orange;
     color: $linen;
     font-family: $body-font;
+    word-wrap: break-word;
 }
 
 a, a:visited {
@@ -37,11 +38,10 @@ body > header {
     font-family: $title-font;
 
     display: flex;
+    flex-wrap: wrap;
     padding: 1rem;
-
-    h1 {
-        flex: 1;
-    }
+    align-items: center;
+    justify-content: space-between;
 
     ul {
         list-style: none;
@@ -61,5 +61,29 @@ body > header {
     font-size: 2rem;
     font-weight: bolder;
     max-width: 25ch;
+    padding: 1em;
     margin: 30vh auto;
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 2em;
+    }
+
+    body > header {
+        text-align: center;
+        & > * {
+            flex: 1;
+        }
+        ul {
+            flex-direction: column;
+            li {
+                padding-left: 0;
+            }
+        }    
+    }
+
+    .presentation {
+        margin: 5vh auto;
+    }
 }
