@@ -1,0 +1,66 @@
+// Colors
+
+$rich-black: #002626; // dark green, not used yet
+$warm-black: #0E4749; // dark green, a bit ligther, not used either
+$chartreuse: #95C623;
+$orange: #E55812;
+$linen: #EFE7DA;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$title-font: 'Alata', sans-serif;
+$body-font: 'Montserrat', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $orange;
+    color: $linen;
+    font-family: $body-font;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: $linen;
+    background: linear-gradient(transparent 0%, transparent 75%, $chartreuse 75%);
+    transition: background 0.1s ease-in-out;
+
+    &:hover {
+        background: linear-gradient(transparent 0%, transparent 50%, $chartreuse 50%);
+    }
+}
+
+body > header {
+    font-family: $title-font;
+
+    display: flex;
+    padding: 1rem;
+
+    h1 {
+        flex: 1;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+
+        li {
+            padding-left: 1rem;
+        }
+    }
+
+    a, a:visited, a:hover {
+        background: none;
+    }
+}
+
+.presentation {
+    font-size: 2rem;
+    font-weight: bolder;
+    max-width: 25ch;
+    margin: 30vh auto;
+}

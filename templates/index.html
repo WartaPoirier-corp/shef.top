@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+Bienvenue
+{% endblock title %}
+
+{% block content %}
+<div class="presentation">
+    {{ section.content | safe }}
+</div>
+{% endblock content %}
