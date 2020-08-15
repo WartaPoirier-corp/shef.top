@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title%} ⋅ Shef.top</title>
-    <link rel="stylesheet" href="shef.css" media="all">
+    <link rel="stylesheet" href="/shef.css" media="all">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <header>
@@ -15,8 +16,9 @@
             <li><a href="/autonomie">Autonomie</a></li>
         </ul>
     </header>
-    <main>
-        {% block content %}{% endblock content %}
-    </main>
+    {% block content %}{% endblock content %}
+    <script>
+        feather.replace()
+    </script>
 </body>
 </html>

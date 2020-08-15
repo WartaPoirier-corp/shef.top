@@ -3,8 +3,11 @@
 $rich-black: #002626; // dark green, not used yet
 $warm-black: #0E4749; // dark green, a bit ligther, not used either
 $chartreuse: #95C623;
-$orange: #E55812;
+$orange: #EF8A17; // #E55812;
 $linen: #EFE7DA;
+
+$background: #002626;
+$foreground: $orange;
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -18,15 +21,15 @@ $body-font: 'Montserrat', sans-serif;
 }
 
 body {
-    background: $orange;
-    color: $linen;
+    background: $background;
+    color: $foreground;
     font-family: $body-font;
     word-wrap: break-word;
 }
 
 a, a:visited {
     text-decoration: none;
-    color: $linen;
+    color: $foreground;
     background: linear-gradient(transparent 0%, transparent 75%, $chartreuse 75%);
 
     &:hover {
@@ -63,6 +66,79 @@ body > header {
     max-width: 25ch;
     padding: 1em;
     margin: 30vh auto;
+}
+
+body > main {
+    max-width: 80vw;
+    margin: auto;
+}
+
+body > h1, body > main > h1 {
+    margin: 4em auto;
+    text-align: center;
+}
+
+.recipes {
+    display: grid;
+    li {
+        display: flex;
+        margin-left: 10vw;
+        margin-bottom: 30vh;
+
+        background: radial-gradient(
+            circle closest-side at 61vw 50%,
+            #0E4749 0%, #0E4749 80%, transparent 80%
+        );
+
+
+        .photo {
+            border-radius: 10px 10px 10px 10px;
+            min-width: 60vw;
+            min-height: 30vh;
+            background-position: center;
+            background-size: cover;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            // background: $background;
+            padding: 2em;
+            
+            p {
+                display: flex;
+                align-items: center;
+                color: $linen;
+                & > * {
+                    padding-right: 1em;
+                }
+            }
+
+            a, a:visited {
+                font-size: 2em;
+                color: $linen;
+            }
+        }
+    }
+
+    li:nth-child(2n) {
+        flex-direction: row-reverse;
+        margin-left: 0px;
+        margin-right: 10vw;
+        background: radial-gradient(
+            circle closest-side at 28vw 60%,
+            #0E4749 0%, #0E4749 80%, transparent 80%
+        );
+
+        main {
+            text-align: right;
+            p {
+                justify-content: end;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1200px) {
