@@ -10,17 +10,17 @@ Toutes les recettes
 <ul class="recipes">
 {% for recette in paginator.pages %}
 <li>
-    <aside class="photo" style="background-image: url('{{ recette.extra.photo }}')"></aside>
+    <aside class="photo" style="background-image: url('{{ recette.extra.photo }}')">
+    </aside>
+    <h1>
+        <a href="{{ recette.permalink }}">{{ recette.title }}</a>
+    </h1>
     <main>
-        <h1>{{ recette.title }}</h1>
-        <p>
-            <i data-feather="clock"></i>
-            <span>{{ recette.extra.temps }} minutes</span>
-            <span>&mdash;</span>
-            <i data-feather="users"></i>
-            <span>{{ recette.extra.portions }} personnes</span>
-        </p>
-        <a href="{{ recette.permalink }}">Lire cette recette</a>
+        <i data-feather="clock"></i>
+        <span>{{ recette.extra.temps }} minutes</span>
+        <span>&mdash;</span>
+        <i data-feather="users"></i>
+        <span>{{ recette.extra.portions }} personnes</span>
     </main>
 </li>
 {% endfor %}
