@@ -1,9 +1,26 @@
 {% extends "base.html" %}
 
 {% block title %}
-Bienvenue
+{{ page.title }}
 {% endblock title %}
 
 {% block content %}
-<h1>{{ page.title }}</h1>
+
+
+<article class="recipe">
+    <header>
+        <h1>{{ page.title }}</h1>
+        <div class="recipe-info">
+            <i data-feather="clock"></i>
+            <span>{{ page.extra.temps }} minutes</span>
+            <span>&mdash;</span>
+            <i data-feather="users"></i>
+            <span>{{ page.extra.portions }} personnes</span>
+        </div>
+    </header>
+    <aside class="photo" style="background-image: url('{{ page.extra.photo }}')"></aside>
+    <main>
+        {{ page.content | safe }}
+    </main>
+</article>
 {% endblock content %}
