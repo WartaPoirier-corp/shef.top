@@ -47,13 +47,18 @@ body > header {
     align-items: center;
     justify-content: space-between;
 
+    h1 {
+        text-align: left;
+    }
+
     ul {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         font-size: 1.5em;
 
-        li {
-            padding-left: 1rem;
+        li:not(:last-child) {
+            padding-right: 1rem;
         }
     }
 }
@@ -90,7 +95,8 @@ h1 {
 }
 
 body > h1, main > h1 {
-    margin: 1em auto;
+    margin: 1em 1em;
+    text-align: center;
     font-size: 4rem;
 }
 
@@ -196,15 +202,28 @@ h2, h3, h4 {
         & > * {
             flex: 1;
         }
-        ul {
-            flex-direction: column;
-            li {
-                padding-left: 0;
-            }
-        }    
     }
 
     .presentation {
         margin: 5vh auto;
+    }
+
+    .recipes {
+        margin: 5vw;
+        grid-template-columns: 1fr;
+    }
+
+    .recipe {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "photo" "recipe";
+
+        header, main {
+            padding: 2rem;
+        }
+
+        main {
+            font-size: 1.3em;
+        }
     }
 }
