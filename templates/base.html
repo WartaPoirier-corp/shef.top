@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/shef.css" media="all">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body>
+<body data-barba="wrapper">
     <header>
         <h1>
             <a href="/">Shef.top</a>
@@ -16,9 +16,18 @@
             <li><a href="/autonomie">Autonomie</a></li>
         </ul>
     </header>
-    {% block content %}{% endblock content %}
+    <main data-barba="container" data-barba-namespace="home">
+        {% block content %}{% endblock content %}
+    </main>
     <script>
         feather.replace()
+    </script>
+    <script type="module">
+        import barba from 'https://unpkg.com/@barba/core@2.9.7/dist/barba.modern.js';
+        import barbaPrefetch from 'https://unpkg.com/@barba/prefetch@2.1.10/dist/barba-prefetch.modern.js';
+        barba.use(barbaPrefetch);
+        
+        barba.init({ });
     </script>
 </body>
 </html>
