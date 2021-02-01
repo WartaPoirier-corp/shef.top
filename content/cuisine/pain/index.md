@@ -3,8 +3,8 @@ title = "Pain au graines"
 
 [extra]
 photo = "https://www.e-zapping.ovh/wp-content/uploads/2017/05/pain.jpg"
-temps = 2 jours
-portions = 1 pain 
+temps = 2
+portions = 1
 +++
 
 ## Ingrédients
