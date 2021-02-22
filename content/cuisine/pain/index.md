@@ -3,8 +3,8 @@ title = "Pain au graines"
 
 [extra]
 photo = "https://www.e-zapping.ovh/wp-content/uploads/2017/05/pain.jpg"
-temps = 2
-portions = 1
+temps = "2 jours"
+portions = "1 pain"
 +++
 
 ## Ingrédients
@@ -15,6 +15,7 @@ portions = 1
 - 8g de sel
 - 30g de graines
 - 40g d'eau pour les graines
+
 ---
 
 Il s'agit d'une pousse lente. Il faut conserver la pâte durant la levée entre 6 et 8°C.

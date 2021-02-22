@@ -145,33 +145,24 @@ h2, h3, h4 {
 }
 
 .recipe {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header photo"
-      "recipe empty";
-
+    margin: 10vh 20vw;
     header {
-      grid-area: header;
+      margin: 5em 0;
+      box-shadow: 0px 0px 50px transparentize($rich-black, 0.9);
       background: $terra-cotta;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      padding: 5rem;
+      & > * { padding: 2em; }
       h1 {
           font-size: 5em;
+          padding: 0em 0.5em;
           text-align: left;
       }
     }
 
-    aside {
-        grid-area: photo;
-    }
-
     main {
         grid-area: recipe;
-        padding: 5rem;
         line-height: 1.5em;
         text-align: justify;
 

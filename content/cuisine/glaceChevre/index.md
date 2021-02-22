@@ -3,8 +3,8 @@ title = "Glace au chèvre"
 
 [extra]
 photo = "https://recettescookeo.com/wp-content/uploads/2015/04/Taboul%C3%A9.jpg"
-temps = 15
-portions = 4
+temps = "15 minutes"
+portions = "4 personnes"
 +++
 
 ## Ingrédients

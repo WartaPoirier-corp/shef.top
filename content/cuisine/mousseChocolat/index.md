@@ -3,8 +3,8 @@ title = "Mousse au chocolat"
 
 [extra]
 photo = "https://www.e-zapping.ovh/wp-content/uploads/2017/05/pain.jpg"
-temps = 30
-portions = 4
+temps = "30 minutes"
+portions = "4 personnes"
 +++
 
 ## Ingrédients
